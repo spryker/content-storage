@@ -31,11 +31,6 @@ class ContentStorageReader implements ContentStorageReaderInterface
      */
     protected $utilEncodingService;
 
-    /**
-     * @param \Spryker\Client\ContentStorage\Dependency\Client\ContentStorageToStorageClientInterface $storageClient
-     * @param \Spryker\Client\ContentStorage\Dependency\Service\ContentStorageToSynchronizationServiceInterface $synchronizationService
-     * @param \Spryker\Client\ContentStorage\Dependency\Service\ContentStorageToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(
         ContentStorageToStorageClientInterface $storageClient,
         ContentStorageToSynchronizationServiceInterface $synchronizationService,
@@ -46,12 +41,6 @@ class ContentStorageReader implements ContentStorageReaderInterface
         $this->utilEncodingService = $utilEncodingService;
     }
 
-    /**
-     * @param string $contentKey
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ContentTypeContextTransfer|null
-     */
     public function findContentTypeContextByKey(string $contentKey, string $localeName): ?ContentTypeContextTransfer
     {
         $storageKey = $this->generateKey($contentKey, $localeName);
@@ -115,12 +104,6 @@ class ContentStorageReader implements ContentStorageReaderInterface
         return $contentStorageKeys;
     }
 
-    /**
-     * @param string $keyName
-     * @param string $localeName
-     *
-     * @return string
-     */
     protected function generateKey(string $keyName, string $localeName): string
     {
         $synchronizationDataTransfer = new SynchronizationDataTransfer();
@@ -132,11 +115,6 @@ class ContentStorageReader implements ContentStorageReaderInterface
             ->generateKey($synchronizationDataTransfer);
     }
 
-    /**
-     * @param string $contentStorageKey
-     *
-     * @return string
-     */
     protected function getContentKey(string $contentStorageKey): string
     {
         $storageKeyArray = explode(':', $contentStorageKey);

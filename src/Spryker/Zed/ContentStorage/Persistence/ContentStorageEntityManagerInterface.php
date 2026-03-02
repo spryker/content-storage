@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\ContentStorageTransfer;
 
 interface ContentStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ContentStorageTransfer $contentStorageTransfer
-     *
-     * @return void
-     */
     public function saveContentStorageEntity(ContentStorageTransfer $contentStorageTransfer): void;
 }

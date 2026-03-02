@@ -19,9 +19,6 @@ use Spryker\Zed\Kernel\Communication\AbstractCommunicationFactory;
  */
 class ContentStorageCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\ContentStorage\Dependency\Facade\ContentStorageToEventBehaviorInterface
-     */
     public function getEventBehaviorFacade(): ContentStorageToEventBehaviorInterface
     {
         return $this->getProvidedDependency(ContentStorageDependencyProvider::FACADE_EVENT_BEHAVIOR);

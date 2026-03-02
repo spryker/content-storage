@@ -16,9 +16,6 @@ use Spryker\Client\Kernel\AbstractFactory;
 
 class ContentStorageFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\ContentStorage\ContentStorage\ContentStorageReaderInterface
-     */
     public function createContentStorage(): ContentStorageReaderInterface
     {
         return new ContentStorageReader(
@@ -28,25 +25,16 @@ class ContentStorageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\ContentStorage\Dependency\Client\ContentStorageToStorageClientInterface
-     */
     public function getStorageClient(): ContentStorageToStorageClientInterface
     {
         return $this->getProvidedDependency(ContentStorageDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\ContentStorage\Dependency\Service\ContentStorageToSynchronizationServiceInterface
-     */
     public function getSynchronizationService(): ContentStorageToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(ContentStorageDependencyProvider::SERVICE_SYNCHRONIZATION);
     }
 
-    /**
-     * @return \Spryker\Client\ContentStorage\Dependency\Service\ContentStorageToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): ContentStorageToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(ContentStorageDependencyProvider::SERVICE_UTIL_ENCODING);

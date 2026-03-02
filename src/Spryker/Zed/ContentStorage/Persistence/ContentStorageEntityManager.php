@@ -15,11 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class ContentStorageEntityManager extends AbstractEntityManager implements ContentStorageEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ContentStorageTransfer $contentStorageTransfer
-     *
-     * @return void
-     */
     public function saveContentStorageEntity(ContentStorageTransfer $contentStorageTransfer): void
     {
         $storageEntity = $this->getFactory()

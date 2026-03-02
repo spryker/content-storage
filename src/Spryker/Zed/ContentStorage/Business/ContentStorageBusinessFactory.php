@@ -21,9 +21,6 @@ use Spryker\Zed\Kernel\Business\AbstractBusinessFactory;
  */
 class ContentStorageBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ContentStorage\Business\ContentStorage\ContentStorageWriterInterface
-     */
     public function createContentStorage(): ContentStorageWriterInterface
     {
         return new ContentStorageWriter(
@@ -34,9 +31,6 @@ class ContentStorageBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\ContentStorage\Dependency\Facade\ContentStorageToLocaleFacadeInterface
-     */
     public function getLocaleFacade(): ContentStorageToLocaleFacadeInterface
     {
         return $this->getProvidedDependency(ContentStorageDependencyProvider::FACADE_LOCALE);
@@ -50,9 +44,6 @@ class ContentStorageBusinessFactory extends AbstractBusinessFactory
         return $this->getProvidedDependency(ContentStorageDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Zed\ContentStorage\Dependency\Facade\ContentStorageToStoreFacadeInterface
-     */
     public function getStoreFacade(): ContentStorageToStoreFacadeInterface
     {
         return $this->getProvidedDependency(ContentStorageDependencyProvider::FACADE_STORE);

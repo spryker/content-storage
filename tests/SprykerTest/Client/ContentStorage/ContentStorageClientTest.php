@@ -46,9 +46,6 @@ class ContentStorageClientTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function testFindContentTypeContextByIdReturnsValidTransfer(): void
     {
         // Arrange
@@ -79,9 +76,6 @@ class ContentStorageClientTest extends Unit
         $this->tester->setDependency(ContentStorageDependencyProvider::CLIENT_STORAGE, $contentToStorageBridge);
     }
 
-    /**
-     * @return \Spryker\Client\ContentStorage\ContentStorageClientInterface
-     */
     protected function createContentStorageClient(): ContentStorageClientInterface
     {
         return new ContentStorageClient();

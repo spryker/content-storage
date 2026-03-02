@@ -75,12 +75,6 @@ class ContentStorageEventResourceBulkRepositoryPlugin extends AbstractPlugin imp
         return SpyContentTableMap::COL_ID_CONTENT;
     }
 
-    /**
-     * @param int $offset
-     * @param int $limit
-     *
-     * @return \Generated\Shared\Transfer\FilterTransfer
-     */
     protected function createFilterTransfer(int $offset, int $limit): FilterTransfer
     {
         return (new FilterTransfer())

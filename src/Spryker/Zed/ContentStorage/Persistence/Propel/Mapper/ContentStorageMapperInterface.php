@@ -15,12 +15,6 @@ use Propel\Runtime\Collection\ObjectCollection;
 
 interface ContentStorageMapperInterface
 {
-    /**
-     * @param \Orm\Zed\Content\Persistence\SpyContent $contentEntity
-     * @param \Generated\Shared\Transfer\ContentTransfer $contentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentTransfer
-     */
     public function mapContentEntityToTransfer(SpyContent $contentEntity, ContentTransfer $contentTransfer): ContentTransfer;
 
     /**
@@ -30,39 +24,15 @@ interface ContentStorageMapperInterface
      */
     public function mapContentEntityCollectionToContentTransfers(ObjectCollection $contentEntityCollection): array;
 
-    /**
-     * @param \Orm\Zed\Content\Persistence\SpyContent $contentEntity
-     * @param \Generated\Shared\Transfer\ContentTransfer $contentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentTransfer
-     */
     public function mapContentEntityToContentTransfer(SpyContent $contentEntity, ContentTransfer $contentTransfer): ContentTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentTransfer $contentTransfer
-     * @param \Orm\Zed\Content\Persistence\SpyContent $contentEntity
-     *
-     * @return \Orm\Zed\Content\Persistence\SpyContent
-     */
     public function mapContentTransferToEntity(ContentTransfer $contentTransfer, SpyContent $contentEntity): SpyContent;
 
-    /**
-     * @param \Orm\Zed\ContentStorage\Persistence\SpyContentStorage $contentStorageEntity
-     * @param \Generated\Shared\Transfer\ContentStorageTransfer $contentStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentStorageTransfer
-     */
     public function mapContentStorageEntityToTransfer(
         SpyContentStorage $contentStorageEntity,
         ContentStorageTransfer $contentStorageTransfer
     ): ContentStorageTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentStorageTransfer $contentStorageTransfer
-     * @param \Orm\Zed\ContentStorage\Persistence\SpyContentStorage $contentStorageEntity
-     *
-     * @return \Orm\Zed\ContentStorage\Persistence\SpyContentStorage
-     */
     public function mapContentStorageTransferToEntity(
         ContentStorageTransfer $contentStorageTransfer,
         SpyContentStorage $contentStorageEntity

@@ -92,9 +92,6 @@ class ContentStorageFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -109,9 +106,6 @@ class ContentStorageFacadeTest extends Unit
         $this->tester->setDependency(ContentStorageDependencyProvider::FACADE_STORE, $this->createContentStorageToStoreFacadeBridgeMock());
     }
 
-    /**
-     * @return void
-     */
     public function testPublishStoresEntityData(): void
     {
         // Arrange
@@ -161,9 +155,6 @@ class ContentStorageFacadeTest extends Unit
         $this->assertEqualsCanonicalizing($contentStoreExpectedData, $contentStorageDataList);
     }
 
-    /**
-     * @return array
-     */
     protected function getContentStorageDataList(): array
     {
         $persistenceFactory = new ContentStoragePersistenceFactory();

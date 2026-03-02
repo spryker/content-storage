@@ -16,12 +16,6 @@ use Propel\Runtime\Collection\ObjectCollection;
 
 class ContentStorageMapper implements ContentStorageMapperInterface
 {
-    /**
-     * @param \Orm\Zed\Content\Persistence\SpyContent $contentEntity
-     * @param \Generated\Shared\Transfer\ContentTransfer $contentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentTransfer
-     */
     public function mapContentEntityToTransfer(SpyContent $contentEntity, ContentTransfer $contentTransfer): ContentTransfer
     {
         $contentTransfer->fromArray($contentEntity->toArray(), true);
@@ -58,23 +52,11 @@ class ContentStorageMapper implements ContentStorageMapperInterface
         return $contentTransfers;
     }
 
-    /**
-     * @param \Orm\Zed\Content\Persistence\SpyContent $contentEntity
-     * @param \Generated\Shared\Transfer\ContentTransfer $contentTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentTransfer
-     */
     public function mapContentEntityToContentTransfer(SpyContent $contentEntity, ContentTransfer $contentTransfer): ContentTransfer
     {
         return $contentTransfer->fromArray($contentEntity->toArray(), true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentTransfer $contentTransfer
-     * @param \Orm\Zed\Content\Persistence\SpyContent $contentEntity
-     *
-     * @return \Orm\Zed\Content\Persistence\SpyContent
-     */
     public function mapContentTransferToEntity(ContentTransfer $contentTransfer, SpyContent $contentEntity): SpyContent
     {
         $contentEntity->fromArray($contentTransfer->toArray());
@@ -82,12 +64,6 @@ class ContentStorageMapper implements ContentStorageMapperInterface
         return $contentEntity;
     }
 
-    /**
-     * @param \Orm\Zed\ContentStorage\Persistence\SpyContentStorage $contentStorageEntity
-     * @param \Generated\Shared\Transfer\ContentStorageTransfer $contentStorageTransfer
-     *
-     * @return \Generated\Shared\Transfer\ContentStorageTransfer
-     */
     public function mapContentStorageEntityToTransfer(
         SpyContentStorage $contentStorageEntity,
         ContentStorageTransfer $contentStorageTransfer
@@ -97,12 +73,6 @@ class ContentStorageMapper implements ContentStorageMapperInterface
         return $contentStorageTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ContentStorageTransfer $contentStorageTransfer
-     * @param \Orm\Zed\ContentStorage\Persistence\SpyContentStorage $contentStorageEntity
-     *
-     * @return \Orm\Zed\ContentStorage\Persistence\SpyContentStorage
-     */
     public function mapContentStorageTransferToEntity(
         ContentStorageTransfer $contentStorageTransfer,
         SpyContentStorage $contentStorageEntity

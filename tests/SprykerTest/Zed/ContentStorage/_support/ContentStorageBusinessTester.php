@@ -28,9 +28,6 @@ class ContentStorageBusinessTester extends Actor
 {
     use _generated\ContentStorageBusinessTesterActions;
 
-    /**
-     * @return \Spryker\Zed\ContentStorage\Business\ContentStorageFacadeInterface
-     */
     public function getFacade(): ContentStorageFacadeInterface
     {
         return $this->getLocator()->contentStorage()->facade();
