@@ -71,4 +71,14 @@ class ContentStorageConfig
      * @var string
      */
     public const CONTENT_RESOURCE_NAME = 'content';
+
+    /**
+     * Specification:
+     * - Queue name used for content publish events.
+     *
+     * @api
+     *
+     * @var string
+     */
+    public const string PUBLISH_CONTENT_QUEUE = 'publish.content';
 }

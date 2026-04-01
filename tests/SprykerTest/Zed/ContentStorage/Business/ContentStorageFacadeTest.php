@@ -15,6 +15,7 @@ use Generated\Shared\Transfer\StoreTransfer;
 use Spryker\Client\Kernel\Container;
 use Spryker\Client\Queue\QueueDependencyProvider;
 use Spryker\Shared\ContentStorage\ContentStorageConfig;
+use Spryker\Zed\ContentStorage\Business\ContentStorageBusinessFactory;
 use Spryker\Zed\ContentStorage\ContentStorageDependencyProvider;
 use Spryker\Zed\ContentStorage\Dependency\Facade\ContentStorageToStoreFacadeBridge;
 use Spryker\Zed\ContentStorage\Persistence\ContentStoragePersistenceFactory;
@@ -103,7 +104,7 @@ class ContentStorageFacadeTest extends Unit
             ];
         });
 
-        $this->tester->setDependency(ContentStorageDependencyProvider::FACADE_STORE, $this->createContentStorageToStoreFacadeBridgeMock());
+        $this->tester->setDependency(ContentStorageDependencyProvider::FACADE_STORE, $this->createContentStorageToStoreFacadeBridgeMock(), ContentStorageBusinessFactory::class);
     }
 
     public function testPublishStoresEntityData(): void
